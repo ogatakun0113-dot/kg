@@ -16,7 +16,7 @@ st.markdown("""
     /* 入力欄のラベルスタイル */
     .stNumberInput label {
         font-size: 20px !important;
-        color: #CD7F32 !important; /* ブロンズ系 */
+        color: #CD7F32 !important; 
         font-weight: 800 !important;
     }
     .stSelectbox label {
@@ -42,13 +42,14 @@ st.title('⚖️ 質量・重量計算アシスト')
 st.markdown("---")
 
 # --- 1. 材質と比重の設定 ---
-# 一般的な比重データ
+# 一般的な比重データ（コンクリートを追加）
 material_data = {
     "鉄 (SS400相当)": 7.85,
     "銅": 8.96,
     "アルミ": 2.70,
     "ステンレス (SUS304)": 7.93,
     "しんちゅう": 8.45,
+    "コンクリート (一般)": 2.35,  # 追加
     "水": 1.00,
     "油 (作動油等目安)": 0.87
 }
@@ -94,4 +95,4 @@ st.write(f"（参考）体積: **{volume_cm3:,.2f} cm³**")
 st.markdown('</div>', unsafe_allow_html=True)
 
 # 補足
-st.caption("※入力された比重に基づき、単純な直方体（板材・水槽など）の質量を計算しています。")
+st.caption("※コンクリートの比重は、配合や骨材により 2.3〜2.45 程度まで変動します。")
